@@ -2,6 +2,10 @@
 #define MASTERVIEW_H
 
 #include <QWidget>
+#include <QEvent>
+#include <QMouseEvent>
+#include <loginview.h>
+#include <registerview.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +21,19 @@ public:
     MasterView(QWidget *parent = nullptr);
     ~MasterView();
 
+public slots:
+    void goLoginView();
+    void goRegisterView();
+
+private slots:
+    void on_btnClose_clicked();
+
 private:
     Ui::MasterView *ui;
+
+    void pushWidgetToStackView(QWidget *widget);
+
+    LoginView *loginView;
+    RegisterView *registerView;
 };
 #endif // MASTERVIEW_H
