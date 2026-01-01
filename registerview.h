@@ -18,6 +18,8 @@ public:
 private slots:
     void on_btnReturn_clicked();
 
+    void on_btnRegister_clicked();
+
 signals:
     void goLoginView();
 
